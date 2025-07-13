@@ -210,70 +210,309 @@ body {
     background-image:
         linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url("../images/hero-image.jpg");
-    /* мобільне зображення з макету */
+    /* використай мобільну версію */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 432px 0 160px;
-    
-    max-width: 320px;
-    max-height: 432px;
-    margin-left: auto;
-    margin-right: auto;
+
+    padding: 112px 0;
+    text-align: center;
 }
 
 .hero-title {
     font-weight: 700;
     font-size: 28px;
-    /* зменшуємо шрифт */
     line-height: 1.14;
+    /* 32px */
     letter-spacing: 0.03em;
     color: #ffffff;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 24px;
-    max-width: 280px;
-    /* трохи вужче */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
+    max-width: 216px;
+    margin: 0 auto 72px;
+    
 }
 
-    /* Заголовок у Hero */
-    .hero-title {
-        font-size: 36px;
-        line-height: 1.14;
-        /* міжрядковий інтервал */
-        letter-spacing: 0.03em;
-        max-width: 216px;
-        max-height: 160px;
-        justify-content: center;
-        margin: 0 auto 32px;
-        text-align: center;
-        color: #ffffff;
-        padding-bottom: 200px;
-    }
+.hero-button {
+    display: inline-block;
+    min-width: 169px;
+    padding: 16px 32px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    background-color: #4d5ae5;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 250ms ease; }
 
-    /* Кнопка у Hero */
-    .hero-button {
-        display: inline-block;
-        min-width: 160px;
-        /* ширина з макета */
-        padding: 14px 24px;
-        /* вертикальний та горизонтальний відступи */
-        font-size: 14px;
-        /* менший шрифт для мобілки */
-        line-height: 1.5;
-        letter-spacing: 0.04em;
-        background-color: #4d5ae5;
-        color: #ffffff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 250ms ease;
+
+     /* ---- МОДАЛЬНЕ ВІКНО ---- */
+          /* Бекдроп модального вікна */
+
+          .backdrop.is-open {
+              position: fixed;
+              inset: 0;
+              background-color: rgba(46, 47, 66, 0.4);
+              z-index: 9999;
     
-    }
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              padding-top: 112px;
+              overflow-y: auto;
+              
+          }
     
+          /* Саме модальне вікно */
+          .modal {
+              position: absolute;
+              top: 112px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 288px;
+              min-height: 623px;
+              padding: 72px 16px 24px;
+              background-color: #ffffff;
+              box-shadow:
+                  0 1px 3px rgba(0, 0, 0, 0.1),
+                  0 1px 1px rgba(0, 0, 0, 0.06),
+                  0 2px 1px rgba(0, 0, 0, 0.08);
+              border-radius: 4px;
+              z-index: 10000;
+          }
+    
+          /* Кнопка закриття (хрестик) */
+          .modal-close-btn {
+              position: absolute;
+              top: 24px;
+              right: 24px;
+              left: auto;
+              width: 24px;
+              height: 24px;
+    
+              display: flex;
+              align-items: center;
+              justify-content: center;
+    
+              background-color: transparent;
+              border: 1px solid rgba(0, 0, 0, 0.1);
+              border-radius: 50%;
+              cursor: pointer;
+          }
+            .modal-close-btn:hover,
+            .modal-close-btn:focus {
+                background-color: rgba(77, 90, 229, 0.1);
+               border-color: #4d5ae5;
+                  }
+        
+          .modal-close-btn:hover .modal-close-icon,
+          .modal-close-btn:focus .modal-close-icon {
+            fill: #4d5ae5;    }
+
+          /* Іконка хрестика всередині кнопки */
+          .modal-close-icon {
+              width: 8px;
+              height: 8px;
+              fill: #2e2f42;
+          }
+    
+          /* Заголовок */
+          .modal-title {
+              margin-bottom: 16px;
+              font-size: 16px;
+              line-height: 1.5;
+              font-weight: 700;
+              text-align: center;
+              color: #2e2f42;
+          }
+    
+          /* Поля форми та коментар */
+          .modal-form-field,
+          .modal-form-comment {
+              margin-bottom: 8px;
+          }
+    
+          /* Вхідні поля + обгортка */
+          .input-wrapper {
+              position: relative;
+          }
+    
+          .modal-input {
+              width: 100%;
+              height: 40px;
+              padding: 11px 38px 11px 38px;
+              font-size: 14px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              outline: none;
+              transition: border-color 0.3s ease;
+          }
+    
+          /* Іконки всередині інпутів */
+          .modal-icon {
+              position: absolute;
+              top: 50%;
+              left: 16px;
+              transform: translateY(-50%);
+              pointer-events: none;
+              fill: #999999;
+              /* базовий колір іконок */
+              transition: fill 0.3s ease;
+          }
+    
+          /* Зміна кольору іконок при фокусі/наведенні на input або textarea */
+          .modal-input:focus+.modal-icon,
+          .modal-textarea:focus+.modal-icon,
+          .modal-input:hover+.modal-icon,
+          .modal-textarea:hover+.modal-icon {
+              fill: #4d5ae5;
+              /* синій колір з макету */
+          }
+    
+          /* Текстове поле (textarea) */
+          .modal-textarea {
+              width: 100%;
+              min-height: 120px;
+              padding: 11px 16px;
+              font-size: 14px;
+              resize: none;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              outline: none;
+              transition: border-color 0.3s ease;
+          }
+    
+          .modal-textarea:focus,
+          .modal-textarea:hover {
+              border-color: #4d5ae5;
+          }
+    
+          .modal-input:focus,
+          .modal-input:hover {
+              border-color: #4d5ae5;
+          }
+    
+          /* Чекбокс і політика */
+          .modal-checkbox-wrapper {
+              margin: 16px 0 24px;
+              display: flex;
+              align-items: center;
+          }
+    
+          .custom-checkbox {
+              width: 16px;
+              height: 16px;
+              border-radius: 2px;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 8px;
+              border: 1px solid #ccc;
+          }
+    
+          /* Галочка показується тільки коли чекбокс відмічений */
+          .modal-checkbox:checked+.custom-checkbox>.checkbox-icon {
+              opacity: 1;
+          }
+    
+/* ЗАБИРАЄМ ЛИШНІЙ ЧЕКБОКС КВАДРАТИК */
+.modal-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    opacity: 0;
+    pointer-events: none; }
+        
+          .checkbox-icon {
+              opacity: 0;
+              transition: opacity 0.3s ease;
+          }
+    
+          /* Кнопка відправки */
+          .modal-submit-btn {
+              display: block;
+              margin: 0 auto;
+              min-width: 169px;
+              padding: 16px 32px;
+              font-size: 16px;
+              font-weight: 700;
+              background-color: #4d5ae5;
+              color: #fff;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              transition: background-color 250ms ease;
+          }
+    
+          .modal-submit-btn:hover,
+          .modal-submit-btn:focus {
+              background-color: #3b47c1;
+          }
+        
+/* ==== Features section (320-767px)  ===== */
+
+.features {
+    padding: 96px 0;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    /* центровано на мобілці */
+}
+
+.feature-item {
+    width: 100%;
+    max-width: 396px;
+    /* для гарного вигляду */
+    text-align: center;
+}
+
+/* Приховуємо іконки повністю */
+.feature-icon {
+    display: none;
+}
+
+.feature-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.11;
+    /* 20px */
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+.feature-text {
+    font-size: 14px;
+    line-height: 1.5;
+    /* 21px */
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+/* Сховати заголовок з accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden; }
+
 
 
 
