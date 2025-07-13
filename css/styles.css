@@ -751,6 +751,7 @@ body {
                     margin: 0;
                     padding: 0;
                     justify-content: center;
+                    flex-direction: row;
                 }
         
                 /* Окремий блок */
@@ -772,12 +773,12 @@ body {
                 }
         
                 /* SVG-іконка */
-                .icon {
+               .icon {
                     width: 64px;
                     height: 64px;
                     fill: #4d5ae5;
                 }
-        
+                
                 /* Заголовок */
                 .feature-title {
                     font-weight: 500;
