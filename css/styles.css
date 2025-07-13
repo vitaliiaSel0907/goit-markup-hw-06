@@ -1,0 +1,1222 @@
+/* Обнуляємо маржини у заголовків і параграфів */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Обнуляємо маржини і padding  */
+ul, ol {
+  margin: 0;
+  padding-left: 0;
+}
+
+/* Зображення робимо блочними */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #434455;
+    background-color: #FFFFFF; }
+
+
+
+/* ===== Мобільна версія (320px–767px) ===== */
+/*== MOBILE HEADER == */
+
+/* Контейнер сторінки */
+.container {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/* ---------- верхня смужка ---------- */
+.header .container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 20px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo {
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+    text-decoration: none;
+}
+
+.logo-studio {
+    color: #2e2f42;
+}
+
+/* Бургер-кнопка */
+.menu-toggle {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+
+.icon-menu-header {
+    width: 24px;
+    height: 24px;
+    fill: #2f2f37;
+}
+
+/* Приховуємо десктопні елементи */
+.nav-list,
+.contact-info {
+    display: none;
+}
+
+/* ===========  МОБІЛЬНЕ МЕНЮ-ОВЕРЛЕЙ  =========== */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 20px 40px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* меню сховане доки є клас is-hidden */
+.mobile-menu.is-hidden {
+    display: none;
+}
+
+/* Кнопка закриття */
+.mobile-menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.mobile-menu-close-icon {
+    width: 8px;
+    height: 8px;
+    fill: #2e2f42;
+}
+
+/* ---------- навігація в меню ---------- */
+.mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mobile-nav-link {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-decoration: none;
+}
+
+.mobile-nav-link.current,
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+    color: #404bbf;
+}
+
+/* ---------- контакти ---------- */
+.mobile-contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile-contact-tel {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #4d5ae5;
+    text-decoration: none;
+}
+
+.mobile-contact-email {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #434455;
+    text-decoration: none;
+}
+
+/* ---------- соціальні іконки ---------- */
+.mobile-socials {
+    list-style: none;
+    margin: 48px 0 0;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+}
+
+.mobile-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    transition: background-color 250ms ease-in-out;
+}
+
+.mobile-social-link:hover,
+.mobile-social-link:focus {
+    background-color: #404bbf;
+}
+
+.mobile-social-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff; }
+
+
+/* Секція Hero для мобілки */
+.hero {
+    background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero-image.jpg");
+    /* мобільне зображення з макету */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 432px 0 160px;
+    
+    max-width: 320px;
+    max-height: 432px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: 28px;
+    /* зменшуємо шрифт */
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 24px;
+    max-width: 280px;
+    /* трохи вужче */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+    /* Заголовок у Hero */
+    .hero-title {
+        font-size: 36px;
+        line-height: 1.14;
+        /* міжрядковий інтервал */
+        letter-spacing: 0.03em;
+        max-width: 216px;
+        max-height: 160px;
+        justify-content: center;
+        margin: 0 auto 32px;
+        text-align: center;
+        color: #ffffff;
+        padding-bottom: 200px;
+    }
+
+    /* Кнопка у Hero */
+    .hero-button {
+        display: inline-block;
+        min-width: 160px;
+        /* ширина з макета */
+        padding: 14px 24px;
+        /* вертикальний та горизонтальний відступи */
+        font-size: 14px;
+        /* менший шрифт для мобілки */
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        background-color: #4d5ae5;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 250ms ease;
+    
+    }
+    
+
+
+
+
+
+
+
+
+/* Стилі для комп*ютера */
+
+@media (min-width: 1158px){
+        .container {
+         width: 1158px;
+         padding-left: 15px;
+         padding-right: 15px;
+         margin-left: auto;
+         margin-right: auto; }
+
+        
+/* Хедер */
+.header {
+    border-bottom: 1px solid #e7e9fc;
+    background-color: #ffffff;
+    box-shadow:
+        0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+}
+
+/* Логотип */
+.header .logo {
+    margin-right: 76px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+    text-decoration: none;
+}
+
+.logo-studio {
+    color: #2e2f42;
+}
+
+/* Навігація */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #404bbf;
+}
+
+/* Активний пункт меню - перший */
+.nav-link.current {
+    position: relative;
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link.current::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+}
+
+/* Контактна інформація */
+.contact-info {
+    font-style: normal;
+}
+
+.contact-list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: #404bbf; }
+
+
+/* Секція Hero */
+.hero {
+    background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/people-office.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 188px 0;
+    text-align: center;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 48px;
+    max-width: 496px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #4D5AE5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 16px 32px;
+    border-radius: 4px;
+    min-width: 169px;
+    text-transform: capitalize;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+    background-color: #404BBF; }
+
+        /* СТИЛІ ДЛЯ МОДАЛЬНОГО ВІКНА */
+        /* ---------- backdrop ---------- */
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(46, 47, 66, 0.4);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+        .backdrop.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    
+       
+        
+     /*  Section 2 Features */
+
+                /* Section 2: Features */
+                .features {
+                    padding-top: 120px;
+                    padding-bottom: 120px;
+                }
+        
+                /* Прихований заголовок */
+                .visually-hidden {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    margin: -1px;
+                    border: 0;
+                    padding: 0;
+                    white-space: nowrap;
+                    clip-path: inset(100%);
+                    clip: rect(0 0 0 0);
+                    overflow: hidden;
+                }
+        
+                /* Список features */
+                .features-list {
+                    display: flex;
+                    gap: 24px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    justify-content: center;
+                }
+        
+                /* Окремий блок */
+                .feature-item {
+                    width: calc((100% - 72px) / 4);
+                }
+        
+                /* Контейнер для іконки */
+                .feature-icon {
+                    background-color: #f4f4fd;
+                    border: 1px solid #8e8f99;
+                    border-radius: 4px;
+                    width: 264px;
+                    height: 112px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 8px;
+                }
+        
+                /* SVG-іконка */
+                .icon {
+                    width: 64px;
+                    height: 64px;
+                    fill: #4d5ae5;
+                }
+        
+                /* Заголовок */
+                .feature-title {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 1.2;
+                    letter-spacing: 0.02em;
+                    color: #2e2f42;
+                    margin-bottom: 8px;
+                }
+        
+                /* Текст */
+                .feature-text {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    letter-spacing: 0.02em;
+                    color: #434455; }
+
+
+
+      /* Секція  3: Our Team */
+
+.team {
+    background-color: #f4f4fd;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* Заголовок секції */
+.section-title {
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #2e2f42;
+    margin-bottom: 72px;
+}
+
+/* Список учасників */
+.team-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+/* Картка учасника */
+.team-item {
+    width: 264px;
+    background-color: #ffffff;
+    border-radius: 0 0 4px 4px;
+    box-shadow:
+        0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Фото */
+.team-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Контейнер для імені та посади */
+.team-info {
+    padding: 32px 0;
+    text-align: center;
+}
+
+/* Ім’я учасника */
+.team-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+/* Посада */
+.team-role {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+/* Контейнер для іконок */
+.team-socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 8px;
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Іконки */
+.team-icon-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.team-icon-link:hover,
+.team-icon-link:focus {
+    background-color: #404bbf;
+}
+
+.team-icon {
+    fill: #f4f4fd;
+    width: 16px;
+    height: 16px; }
+
+  .social-item {
+   width: 40px;
+   height: 40px;   }
+
+
+    /* Секція Portfolio */
+
+.portfolio {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+/* Заголовок секції */
+.section-title {
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #2e2f42;
+    margin-bottom: 72px;
+}
+
+/* Список */
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Картка */
+.portfolio-item {
+    width: calc((100% - 48px) / 3);
+    background-color: #ffffff;
+    box-shadow:
+        0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Картинка обгорнута в контейнер */
+.portfolio-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+/* Зображення */
+.portfolio-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Параграф з описом */
+.portfolio-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--cloud, #f4f4fd);
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    
+}
+
+/* Інформація  */
+.portfolio-info {
+    padding: 32px 16px;
+    border: 1px solid #e7e9fc;
+    border-top: none;
+}
+
+/* Заголовок проекту */
+.portfolio-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin: 0 0 8px 0;
+}
+
+/* Тип проекту */
+.portfolio-type {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+    margin: 0;
+}
+
+/* Ховер ефекти */
+
+/* При наведенні на картку зображення текст піднімається */
+.portfolio-item:hover .portfolio-description {
+    transform: translateY(0%);
+}
+
+
+
+/* Footer Section */
+/* Основні кольори як CSS-змінні */
+:root {
+    --color-footer-bg: #2e2f42;
+    --color-primary: #4d5ae5;
+    --color-primary-hover: #31d0aa;
+    --color-text-light: #f4f4fd;
+    --color-white: #ffffff;
+    --color-icon: #f4f4fd;
+}
+
+/* --- Футер загальний --- */
+:root {
+    --color-footer-bg: #2e2f42;
+    --color-primary: #4d5ae5;
+    --color-primary-hover: #31d0aa;
+    --color-text-light: #f4f4fd;
+    --color-white: #ffffff;
+    --color-icon: #f4f4fd;
+}
+
+.footer {
+    background-color: var(--color-footer-bg);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-logo-text {
+    max-width: 264px;
+    margin-right: 120px;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+
+.footer-logo .studio-text {
+    color: var(--color-text-light);
+    text-transform: none;
+}
+
+.footer-description {
+    color: var(--color-text-light);
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-top: 16px;
+    max-width: 264px;
+}
+
+.footer-social {
+    width: 208px;
+    height: 80px;
+}
+
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    margin-bottom: 16px;
+}
+
+.social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+}
+
+.social-item {
+    width: 40px;
+    height: 40px;
+}
+
+.social-link {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    outline: none;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--color-primary-hover);
+}
+
+.social-icon {
+    fill: var(--color-icon);
+    width: 24px;
+    height: 24px;
+    display: block; }
+
+/* footer-subscribe*/
+.footer-subscribe {
+    max-width: 453px;
+    margin-left: auto;
+}
+
+.footer-subscribe-title {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+
+.subscribe-label {
+    position: relative;
+    display: inline-block;
+}
+
+/* span у label — прихований */
+.subscribe-label-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.subscribe-input {
+    width: 264px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.subscribe-input::placeholder {
+    color: #ffffff;
+}
+
+.subscribe-button {
+    min-width: 165px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4d5ae5;
+    border: none;
+    border-radius: 4px;
+}
+
+.subscribe-icon {
+    margin-left: 16px;
+    fill: #ffffff; }
+
+
+/* Контейнер модального вікна */
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+}
+/* Коли модалка відкрита */
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; }
+
+
+
+/* Модальне вікно */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    background: #fcfcfc;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 72px 24px 24px 24px;
+}
+
+/* Кнопка закриття */
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+
+.modal-close-icon {
+    width: 8px;
+    height: 8px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+    fill: #ffffff;
+}
+
+/* Заголовок модалки */
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--color2, #2e2f42);
+    margin-bottom: 16px;
+}
+
+/* Лейбл для форми */
+.modal-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--color3, #8e8f99);
+}
+
+/* Поле форми */
+.modal-form-field {
+    margin-bottom: 8px;
+}
+
+/* Обгортка для input та іконок */
+.input-wrapper {
+    position: relative;
+}
+
+/* Поля вводу */
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: #4D5AE5;
+}
+
+/* Іконки біля input */
+.modal-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 24px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    fill: #2e2f42;
+}
+
+.input-wrapper:focus-within .modal-icon {
+     fill: #4D5AE5;
+}
+
+/* Коментар */
+.modal-form-comment {
+    margin-bottom: 16px;
+}
+
+/* Текстова область */
+.modal-textarea {
+    width: 100%;
+    height: 120px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea:focus {
+    border-color: #4d5ae5;
+}
+
+/* Контейнер чекбокса */
+.modal-checkbox-wrapper {
+    margin-bottom: 24px;
+}
+
+/* Лейбл для чекбокса */
+.modal-label-privacy {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--color3, #8e8f99);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Прихований чекбокс */
+.modal-checkbox.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+/* Кастомний чекбокс */
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition:
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+}
+
+/* Активний чекбокс */
+.modal-checkbox:checked+.modal-label-privacy .custom-checkbox {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+}
+
+/* Лінк */
+.privacy-link {
+    color: #4d5ae5;
+}
+
+/* Кнопка Send */
+.modal-submit-btn {
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4d5ae5;
+    border: none;
+    margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-btn:hover,
+.modal-submit-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+}
