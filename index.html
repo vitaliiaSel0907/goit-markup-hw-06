@@ -189,14 +189,28 @@
 
 
 <!-- Section 3: Our Team -->
+<!-- Section 3: Our Team -->
 
 <section class="team">
     <div class="container">
         <h2 class="section-title">Our Team</h2>
         <ul class="team-list">
+
             <!-- Mark Guerrero -->
             <li class="team-item">
-                <img src="./images/mark.jpg" alt="Mark Guerrero" width="264" class="team-photo" />
+                <picture>
+                    <!-- Мобільні фото -->
+                    <source media="(max-width: 767.98px)" srcset="
+                ./images/mark-mob.jpg 1x,
+                ./images/mark-mob@2x.jpg 2x
+              " />
+                    <!-- Десктоп фото (старі шляхи) -->
+                    <source media="(min-width: 768px)" srcset="
+                ./images/mark.jpg 1x,
+                ./images/mark@2x.jpg 2x
+              " />
+                    <img src="./images/mark.jpg" alt="Mark Guerrero" width="264" class="team-photo" />
+                </picture>
                 <div class="team-info">
                     <h3 class="team-name">Mark Guerrero</h3>
                     <p class="team-role">Product Designer</p>
@@ -235,7 +249,17 @@
 
             <!-- Tom Ford -->
             <li class="team-item">
-                <img src="./images/tom.jpg" alt="Tom Ford" width="264" class="team-photo" />
+                <picture>
+                    <source media="(max-width: 767.98px)" srcset="
+                ./images/tom-mob.jpg 1x,
+                ./images/tom-mob@2x.jpg 2x
+              " />
+                    <source media="(min-width: 768px)" srcset="
+                ./images/tom.jpg 1x,
+                ./images/tom@2x.jpg 2x
+              " />
+                    <img src="./images/tom.jpg" alt="Tom Ford" width="264" class="team-photo" />
+                </picture>
                 <div class="team-info">
                     <h3 class="team-name">Tom Ford</h3>
                     <p class="team-role">Frontend Developer</p>
@@ -274,7 +298,17 @@
 
             <!-- Camila Garcia -->
             <li class="team-item">
-                <img src="./images/camila-garcia.jpg" alt="Camila Garcia" width="264" class="team-photo" />
+                <picture>
+                    <source media="(max-width: 767.98px)" srcset="
+                ./images/camila-mob.jpg 1x,
+                ./images/camila-mob@2x.jpg 2x
+              " />
+                    <source media="(min-width: 768px)" srcset="
+                ./images/camila-garcia.jpg 1x,
+                ./images/camila-garcia@2x.jpg 2x
+              " />
+                    <img src="./images/camila-garcia.jpg" alt="Camila Garcia" width="264" class="team-photo" />
+                </picture>
                 <div class="team-info">
                     <h3 class="team-name">Camila Garcia</h3>
                     <p class="team-role">Marketing</p>
@@ -313,7 +347,17 @@
 
             <!-- Daniel Wilson -->
             <li class="team-item">
-                <img src="./images/daniel-wilson.jpg" alt="Daniel Wilson" width="264" class="team-photo" />
+                <picture>
+                    <source media="(max-width: 767.98px)" srcset="
+                ./images/daniel-mob.jpg 1x,
+                ./images/daniel-mob@2x.jpg 2x
+              " />
+                    <source media="(min-width: 768px)" srcset="
+                ./images/daniel-wilson.jpg 1x,
+                ./images/daniel-wilson@2x.jpg 2x
+              " />
+                    <img src="./images/daniel-wilson.jpg" alt="Daniel Wilson" width="264" class="team-photo" />
+                </picture>
                 <div class="team-info">
                     <h3 class="team-name">Daniel Wilson</h3>
                     <p class="team-role">UI Designer</p>
@@ -349,6 +393,7 @@
                     </ul>
                 </div>
             </li>
+
         </ul>
     </div>
     </section>

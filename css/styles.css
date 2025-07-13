@@ -513,7 +513,78 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden; }
 
+/* === OUR TEAM — mobile 320-767px === */
 
+    /* OUR TEAM секція */
+    .team {
+        background-color: #f4f4fd;
+        padding: 96px 0;
+    }
+
+    /* Заголовок */
+    .section-title {
+        font-size: 28px;
+        line-height: 1.14;
+        /* 32px */
+        margin-bottom: 72px;
+    }
+
+    /* Список карток */
+    .team-list {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        /* рівняємо по центру */
+    }
+
+    /* Картка учасника */
+    .team-item {
+        width: 100%;
+        /* займає всю ширину контейнера */
+        max-width: 296px;
+        /* трохи запасу щоб не прилипало */
+        background: #ffffff;
+        border-radius: 0 0 4px 4px;
+        box-shadow:
+            0 1px 6px rgba(46, 47, 66, .08),
+            0 1px 1px rgba(46, 47, 66, .16),
+            0 2px 1px rgba(46, 47, 66, .08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .team-info {
+        padding: 32px 0;
+        text-align: center;
+    }
+
+    .team-name {
+        font-size: 18px;
+        line-height: 1.11;
+        /* 20px */
+        margin-bottom: 8px;
+    }
+
+    .team-role {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* соц-іконки залишаються як у десктопі */
+    .team-socials {
+        gap: 24px;
+    } 
 
 
 
@@ -825,6 +896,7 @@ body {
     padding: 0;
     margin: 0;
     justify-content: center;
+    flex-direction: row;
 }
 
 /* Картка учасника */
