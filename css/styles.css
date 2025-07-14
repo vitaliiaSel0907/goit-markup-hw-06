@@ -889,10 +889,10 @@ ul {
 
 
 
+   /* Стилі для  П Л А Н Ш Е Т А  */
 
-   /* Стилі для П Л А Н Ш Е Т А  */
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1157px) {
 
 .header .container {
         flex-direction: row;
@@ -900,7 +900,7 @@ ul {
         align-items: center;
         height: 72px;
         padding: 0 32px;
-        /* відступи з макета */
+      
     }
 
     /* --- бургер ховаємо --- */
@@ -983,56 +983,175 @@ ul {
         background-color: #404bbf;
     }
 
-/* Стилі для Our Team Mobile First */
-.team {
-        padding: 96px 32px;
+@media (min-width: 768px) {
+
+    .hero {
+        /* фон—foto з desktop-макету */
+        background-image:
+            linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("../images/people-office.jpg");
+        padding: 112px 0;
+        text-align: center;
     }
 
-    .section-title {
-        font-size: 28px;
-        margin-bottom: 64px;
+    /* Retina-варіант того самого зображення */
+    @media (min-resolution: 192dpi) {
+        .hero {
+            background-image:
+                linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                url("../images/people-office@2x.jpg");
+        }
     }
 
-    .team-list {
-        flex-direction: row;
-        gap: 24px;
-        justify-content: center;
-        flex-wrap: wrap;
+    .hero-container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 0 32px;
     }
 
-    .team-item {
-        max-width: 264px;
-        padding-bottom: 32px;
+    .hero-title {
+        font-size: 56px;
+        line-height: 1.07;
+        letter-spacing: 0.02em;
+        max-width: 496px;
+        margin-bottom: 36px;
+        
     }
 
-    .team-info {
-        padding: 32px 16px 0;
-    }
-
-    .team-name {
-        font-size: 20px;
-    }
-
-    .team-role {
+    .hero-button {
+        display: inline-block;
+        min-width: 169px;
+        padding: 16px 32px;
         font-size: 16px;
     }
 
-    .social-item {
-        width: 40px;
-        height: 40px;
-    }
+   /* features tablet */
+   .features {
+       padding: 96px 0;
+   }
 
-    .team-icon-link {
-        width: 40px;
-        height: 40px;
-    }
+   .features-list {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 72px 24px;
+       /* 72px по вертикалі, 24px по горизонталі */
+       justify-content: center;
+       flex-direction: row;
+   }
 
-    .team-icon {
-        width: 16px;
-        height: 16px;
-    }
+   .feature-item {
+       width: calc((100% - 24px) / 2);
+       /* 2 в ряд */
+       text-align: left;
+   }
+  /* іконки приховуємо*/
+    .feature-icon {
+     display: none;
+   }
 
-        /* Стилі для footer  */
+   .feature-title {
+       font-weight: 700;
+       font-size: 18px;
+       line-height: 1.11;
+       letter-spacing: 0.02em;
+       color: #2e2f42;
+       margin-bottom: 8px;
+   }
+
+   .feature-text {
+       font-size: 14px;
+       line-height: 1.5;
+       letter-spacing: 0.02em;
+       color: #434455;
+   }
+                 
+
+
+/* Стилі для Our Team для ПЛАНШЕТА */
+  .team {
+      padding: 96px 32px;
+  }
+
+  .section-title {
+      font-size: 28px;
+      margin-bottom: 64px;
+  }
+
+  .team-list {
+      flex-direction: row;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+
+  .team-item {
+      max-width: 264px;
+      padding-bottom: 32px;
+  }
+
+  .team-info {
+      padding: 32px 16px 0;
+  }
+
+  .team-name {
+      font-size: 20px;
+  }
+
+  .team-role {
+      font-size: 16px;
+  }
+
+  .social-item {
+      width: 40px;
+      height: 40px;
+  }
+
+  .team-icon-link {
+      width: 40px;
+      height: 40px;
+  }
+
+  .team-icon {
+      width: 16px;
+      height: 16px;
+  }
+/* Стилі  portfolio для ПЛАНШЕТА */
+  .portfolio {
+      padding-top: 96px;
+      padding-bottom: 96px;
+  }
+
+  .portfolio-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px 24px;
+      justify-content: center;
+      flex-direction: row;
+  }
+
+  .portfolio-item {
+      width: calc((100% - 24px) / 2);
+      max-width: 500px;
+  }
+
+  .portfolio-description {
+      font-size: 15px;
+      padding: 32px 24px;
+  }
+
+  .portfolio-info {
+      padding: 28px 20px;
+  }
+
+  .portfolio-name {
+      font-size: 18px;
+  }
+
+  .portfolio-type {
+      font-size: 15px;
+  }
+
+       /* Стилі для footer  */
     .footer-wrapper {
         max-width: 768px;
         flex-direction: row;
@@ -1068,8 +1187,20 @@ ul {
     .subscribe-input {
         width: 264px;
     }
+        .subscribe-form {
+            align-items: center;
+        }
+    
+                .subscribe-form {
+                    align-items: center;
+                }
+        
+        .subscribe-form {
+            align-items: center;
+        }
+    
+        }
 }
-
 
 
 
@@ -1515,64 +1646,43 @@ ul {
 
 
 /* Footer Section */
-/* Основні кольори як CSS-змінні */
-:root {
-    --color-footer-bg: #2e2f42;
-    --color-primary: #4d5ae5;
-    --color-primary-hover: #31d0aa;
-    --color-text-light: #f4f4fd;
-    --color-white: #ffffff;
-    --color-icon: #f4f4fd;
-}
 
 
-  .footer {
-      padding: 100px 0;
-  }
-
-  .footer-wrapper {
-      max-width: 1158px;
-      margin: 0 auto;
-      padding: 0 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
-  }
-
-  .footer-logo-text {
-      max-width: 264px;
-      margin-right: 120px;
-  }
-
-  .footer-description {
-      margin-top: 16px;
-  }
-
-  .footer-social {
-      width: 208px;
-      height: auto;
-  }
-
-  .footer-subscribe {
-      max-width: 453px;
-      margin-left: auto;
-  }
-
-  .subscribe-form {
-      flex-direction: row;
-      gap: 24px;
-      justify-content: flex-start;
-  }
-
-  .subscribe-input {
-      width: 264px;
-  }
-
-  .subscribe-button {
-      min-width: 165px;
-      padding: 0 24px;
-  }
+        .footer-wrapper {
+            max-width: 1158px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            text-align: left;
+        }
+    
+        .footer-logo-text {
+            max-width: 264px;
+            margin-right: 120px;
+        }
+    
+        .footer-subscribe {
+            max-width: 453px;
+            margin-left: auto;
+        }
+    
+        /* щоб кружечки не «роздувались» */
+        .social-item,
+        .social-link {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+        }
+    
+        /* svg всередині – 24×24 */
+        .social-icon,
+        .subscribe-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
   
 
 
