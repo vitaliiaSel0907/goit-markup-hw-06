@@ -26,6 +26,8 @@ body {
 /* ===== Мобільна версія (320px–767px) ===== */
 /*== MOBILE HEADER == */
 
+/* ======= MOBILE FIRST HEADER ======= */
+
 /* Контейнер сторінки */
 .container {
     max-width: 100%;
@@ -33,7 +35,17 @@ body {
     margin: 0 auto;
 }
 
-/* ---------- верхня смужка ---------- */
+/* Хедер */
+.header {
+    border-bottom: 1px solid #e7e9fc;
+    background-color: #ffffff;
+    box-shadow:
+        0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+/* Хедер контейнер — вертикальний для мобілки */
 .header .container {
     display: flex;
     flex-direction: column;
@@ -41,6 +53,7 @@ body {
     padding: 16px 20px;
 }
 
+/* Навігація */
 .nav {
     width: 100%;
     display: flex;
@@ -51,8 +64,8 @@ body {
 /* Логотип */
 .logo {
     font-family: "Raleway", sans-serif;
-    font-size: 18px;
     font-weight: 700;
+    font-size: 18px;
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
@@ -64,7 +77,7 @@ body {
     color: #2e2f42;
 }
 
-/* Бургер-кнопка */
+/* Бургер-кнопка (меню) */
 .menu-toggle {
     display: inline-flex;
     width: 40px;
@@ -80,13 +93,13 @@ body {
     fill: #2f2f37;
 }
 
-/* Приховуємо десктопні елементи */
+/* Ховаємо десктопні меню і контакти */
 .nav-list,
 .contact-info {
     display: none;
 }
 
-/* ===========  МОБІЛЬНЕ МЕНЮ-ОВЕРЛЕЙ  =========== */
+/* Мобільне меню-оверлей (початково приховане) */
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -99,12 +112,11 @@ body {
     z-index: 1000;
 }
 
-/* меню сховане доки є клас is-hidden */
 .mobile-menu.is-hidden {
     display: none;
 }
 
-/* Кнопка закриття */
+/* Кнопка закриття мобільного меню */
 .mobile-menu-close {
     position: absolute;
     top: 24px;
@@ -121,7 +133,7 @@ body {
     fill: #2e2f42;
 }
 
-/* ---------- навігація в меню ---------- */
+/* Мобільна навігація */
 .mobile-nav-list {
     list-style: none;
     margin: 0;
@@ -146,7 +158,7 @@ body {
     color: #404bbf;
 }
 
-/* ---------- контакти ---------- */
+/* Контакти мобільні */
 .mobile-contact-list {
     list-style: none;
     margin: 0;
@@ -174,7 +186,7 @@ body {
     text-decoration: none;
 }
 
-/* ---------- соціальні іконки ---------- */
+/* Соціальні іконки мобільні */
 .mobile-socials {
     list-style: none;
     margin: 48px 0 0;
@@ -202,7 +214,16 @@ body {
 .mobile-social-icon {
     width: 24px;
     height: 24px;
-    fill: #ffffff; }
+    fill: #ffffff;
+}
+
+/* Скидаємо стилі списків, щоб не було крапок */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 /* Секція Hero для мобілки */
@@ -824,7 +845,6 @@ body {
    .subscribe-input {
        width: 100%;
        max-width: 398px;
-       /* як у макеті */
        height: 40px;
        padding-left: 16px;
        font-size: 12px;
@@ -873,6 +893,95 @@ body {
    /* Стилі для П Л А Н Ш Е Т А  */
 
 @media (min-width: 768px) {
+
+.header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 72px;
+        padding: 0 32px;
+        /* відступи з макета */
+    }
+
+    /* --- бургер ховаємо --- */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* --- десктопна навігація показується --- */
+    .nav-list {
+        display: flex;
+        gap: 40px;
+    }
+
+    /* --- контакти показуємо праворуч --- */
+    .contact-info {
+        display: block;
+        margin-left: auto;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        /* телефон і e-mail стовпчиком */
+        gap: 12px;
+    }
+
+    .contact-link {
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.02em;
+        color: #434455;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .contact-link:hover,
+    .contact-link:focus {
+        color: #404bbf;
+    }
+
+    /* --- навігаційні лінки з індикатором --- */
+    .nav-link {
+        position: relative;
+        /* база для псевдоелемента */
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #2e2f42;
+        padding: 24px 0;
+        /* згідно макету */
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        color: #404bbf;
+    }
+
+    /* індикатор-підкреслення */
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        background-color: transparent;
+        border-radius: 2px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* активна сторінка */
+    .nav-link.current::after {
+        background-color: #404bbf;
+    }
+
+    /* підкреслення при наведенні/фокусі */
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+        background-color: #404bbf;
+    }
 
 /* Стилі для Our Team Mobile First */
 .team {
@@ -964,6 +1073,9 @@ body {
 
 
 
+
+
+
 /* Стилі для комп*ютера */
 
 @media (min-width: 1158px){
@@ -975,115 +1087,62 @@ body {
          margin-right: auto; }
 
         
-/* Хедер */
-.header {
-    border-bottom: 1px solid #e7e9fc;
-    background-color: #ffffff;
-    box-shadow:
-        0px 2px 1px rgba(46, 47, 66, 0.08),
-        0px 1px 1px rgba(46, 47, 66, 0.16),
-        0px 1px 6px rgba(46, 47, 66, 0.08);
-}
+  .header .container {
+      padding: 0 80px;
+      /* за макетом */
+      height: 72px;
+  }
 
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 72px;
-}
+  /* Логотип - більший відступ */
+  .logo {
+      margin-right: 76px;
+  }
 
-/* Логотип */
-.header .logo {
-    margin-right: 76px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.17;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #4d5ae5;
-    text-decoration: none;
-}
+  /* Навігація - можна збільшити gap */
+  .nav-list {
+      gap: 40px;
+  }
 
-.logo-studio {
-    color: #2e2f42;
-}
+  .nav-link {
+      font-size: 16px;
+      font-weight: 500;
+      padding: 24px 0;
+  }
 
-/* Навігація */
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
+  /* Контактна інформація — горизонтальний список */
+  .contact-list {
+      flex-direction: row;
+      gap: 40px;
+  }
 
-.nav-list {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+  .contact-link {
+      font-size: 16px;
+      color: #434455;
+  }
+  .nav-link {
+      position: relative;
+  }
 
-.nav-link {
-    display: block;
-    padding: 24px 0;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-    text-decoration: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 4px;
+      background-color: transparent;
+      border-radius: 2px;
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.nav-link:hover,
-.nav-link:focus {
-    color: #404bbf;
-}
+  .nav-link.current::after {
+      background-color: #404bbf;
+  }
 
-/* Активний пункт меню - перший */
-.nav-link.current {
-    position: relative;
-    color: #404bbf;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link.current::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    background-color: #404bbf;
-    border-radius: 2px;
-}
-
-/* Контактна інформація */
-.contact-info {
-    font-style: normal;
-}
-
-.contact-list {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.contact-link {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
-    text-decoration: none;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-link:hover,
-.contact-link:focus {
-    color: #404bbf; }
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+      background-color: #404bbf;
+  }
 
 
 /* Секція Hero */
