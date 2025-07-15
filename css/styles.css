@@ -111,9 +111,8 @@ body {
     overflow-y: auto;
     z-index: 1000;
 }
-
 .mobile-menu.is-hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Кнопка закриття мобільного меню */
@@ -893,46 +892,54 @@ ul {
 
 
 @media screen and (min-width: 768px) and (max-width: 1157px) {
-
 .header .container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         height: 72px;
         padding: 0 32px;
-      
     }
 
-    /* --- бургер ховаємо --- */
     .menu-toggle {
         display: none;
     }
 
-    /* --- десктопна навігація показується --- */
+    /* NAV becomes flex-grow to let nav‑list center */
+    .nav {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .logo {
+        flex-shrink: 0;
+    }
+
     .nav-list {
         display: flex;
         gap: 40px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* --- контакти показуємо праворуч --- */
     .contact-info {
         display: block;
         margin-left: auto;
+        font-style: normal;
     }
 
     .contact-list {
         display: flex;
         flex-direction: column;
-        /* телефон і e-mail стовпчиком */
         gap: 12px;
     }
 
     .contact-link {
         font-size: 12px;
         line-height: 1.17;
-        letter-spacing: 0.02em;
+        letter-spacing: .02em;
         color: #434455;
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: color .25s cubic-bezier(.4, 0, .2, 1);
     }
 
     .contact-link:hover,
@@ -940,18 +947,15 @@ ul {
         color: #404bbf;
     }
 
-    /* --- навігаційні лінки з індикатором --- */
     .nav-link {
         position: relative;
-        /* база для псевдоелемента */
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
-        letter-spacing: 0.02em;
+        letter-spacing: .02em;
         color: #2e2f42;
         padding: 24px 0;
-        /* згідно макету */
-        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: color .25s cubic-bezier(.4, 0, .2, 1);
     }
 
     .nav-link:hover,
@@ -959,28 +963,25 @@ ul {
         color: #404bbf;
     }
 
-    /* індикатор-підкреслення */
     .nav-link::after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         bottom: -1px;
         width: 100%;
         height: 4px;
-        background-color: transparent;
+        background: transparent;
         border-radius: 2px;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background .25s cubic-bezier(.4, 0, .2, 1);
     }
 
-    /* активна сторінка */
     .nav-link.current::after {
-        background-color: #404bbf;
+        background: #404bbf;
     }
 
-    /* підкреслення при наведенні/фокусі */
     .nav-link:hover::after,
     .nav-link:focus::after {
-        background-color: #404bbf;
+        background: #404bbf;
     }
 
 @media (min-width: 768px) {
@@ -1210,70 +1211,136 @@ ul {
 /* Стилі для комп*ютера */
 
 @media (min-width: 1158px){
-        .container {
-         width: 1158px;
-         padding-left: 15px;
-         padding-right: 15px;
-         margin-left: auto;
-         margin-right: auto; }
+    /* Хедер */
+         
+.header {
+        height: 72px;
+        /* Figma: 72 px */
+        background: #fff;
+        border-bottom: 1px solid #e7e9fc;
+        box-shadow: 0 2px 1px rgba(46, 47, 66, .08),
+            0 1px 1px rgba(46, 47, 66, .16),
+            0 1px 6px rgba(46, 47, 66, .08);
+    }
 
-        
-  .header .container {
-      padding: 0 80px;
-      /* за макетом */
-      height: 72px;
-  }
+    /* 2. MAIN CONTAINER (3 колонки) -- */
+    .header .container {
+        max-width: 1158px;
+        /* Figma content width */
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+       position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        /* logo | nav | contacts */
+        align-items: center;
+    }
 
-  /* Логотип - більший відступ */
-  .logo {
-      margin-right: 76px;
-  }
+    /* 3. LOGO (ліва колонка) ----- */
+    .logo {
+        font: 700 18px/1.17 "Raleway", sans-serif;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+        color: #4d5ae5;
+        white-space: nowrap;
+        /* не переноситься */
+    }
 
-  /* Навігація - можна збільшити gap */
-  .nav-list {
-      gap: 40px;
-  }
+    .logo-studio {
+        color: #2e2f42
+    }
 
-  .nav-link {
-      font-size: 16px;
-      font-weight: 500;
-      padding: 24px 0;
-  }
+    
+    .menu-toggle {
+        display: none;
+    }
 
-  /* Контактна інформація — горизонтальний список */
-  .contact-list {
-      flex-direction: row;
-      gap: 40px;
-  }
+    /* бургер ховаємо */
 
-  .contact-link {
-      font-size: 16px;
-      color: #434455;
-  }
-  .nav-link {
-      position: relative;
-  }
+    .nav {
+        justify-self: center;
+    }
 
-  .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      width: 100%;
-      height: 4px;
-      background-color: transparent;
-      border-radius: 2px;
-      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    /* ставимо nav у центр */
 
-  .nav-link.current::after {
-      background-color: #404bbf;
-  }
+          .nav-list {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-44%);
+              /* -50 % → ідеально; -44 % — відчутно «вліво» */
+              display: flex;
+              gap: 40px;
+              margin: 0;
+              padding: 0;
+              list-style: none;
+          }
+    
+          
 
-  .nav-link:hover::after,
-  .nav-link:focus::after {
-      background-color: #404bbf;
-  }
+    .nav-link {
+        position: relative;
+        display: block;
+        padding: 24px 0;
+        font: 500 16px/1.5 "Roboto", sans-serif;
+        letter-spacing: .02em;
+        color: #2e2f42;
+        text-decoration: none;
+        transition: color .25s cubic-bezier(.4, 0, .2, 1);
+
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        color: #404bbf
+    }
+
+    /* активний пункт */
+    .nav-link.current {
+        color: #404bbf
+    }
+
+    .nav-link.current::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 4px;
+        background: #404bbf;
+        border-radius: 2px;
+    }
+
+    /* 5. CONTACTS (права колонка) ------------------------------------- */
+    .contact-info {
+        justify-self: end;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        font-style: normal;
+        white-space: nowrap;
+        /* не ламати на дві лінії */
+    }
+
+    .contact-list {
+        display: flex;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .contact-link {
+        font: 400 16px/1.5 "Roboto", sans-serif;
+        color: #434455;
+        text-decoration: none;
+        transition: color .25s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .contact-link:hover,
+    .contact-link:focus {
+        color: #404bbf
+    }
 
 
 /* Секція Hero */
@@ -1682,8 +1749,7 @@ ul {
             width: 24px;
             height: 24px;
         }
-        
-  
+    
 
 
 
@@ -1926,5 +1992,6 @@ ul {
 .modal-submit-btn:focus {
     background-color: #404bbf;
     border: none;
+
 }
 }
