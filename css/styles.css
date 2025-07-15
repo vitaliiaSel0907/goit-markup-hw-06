@@ -1,14 +1,25 @@
-/* Обнуляємо маржини у заголовків і параграфів */
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
+body {
+    font-family: "Roboto", sans-serif;
+    color: #434455;
+    background-color: #FFFFFF;
 }
 
 /* Обнуляємо маржини і padding  */
 ul, ol {
   margin: 0;
-  padding-left: 0;
+  padding: 0;
 }
 
+/* Обнуляємо маржини у заголовків і параграфів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
 /* Зображення робимо блочними */
 img {
   display: block;
@@ -16,24 +27,17 @@ img {
   height: auto;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    color: #434455;
-    background-color: #FFFFFF; }
 
-
-
-/* ===== Мобільна версія (320px–767px) ===== */
 /*== MOBILE HEADER == */
 
-/* ======= MOBILE FIRST HEADER ======= */
-
 /* Контейнер сторінки */
+
 .container {
-    max-width: 100%;
-    padding: 0 20px;
-    margin: 0 auto;
-}
+        max-width: 320px;
+        padding: 0 16px;
+        margin: 0 auto;
+    }
+   
 
 /* Хедер */
 .header {
@@ -79,17 +83,14 @@ body {
 
 /* Бургер-кнопка (меню) */
 .menu-toggle {
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
+   padding: 0px;
+   border: none;
+   background-color: transparent;
 }
 
 
 .icon-menu-header {
-    width: 24px;
-    height: 24px;
+    display: block;
     fill: #2f2f37;
 }
 
@@ -891,7 +892,11 @@ ul {
    /* Стилі для  П Л А Н Ш Е Т А  */
 
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
+@media screen and (min-width: 768px) {
+.container{
+    max-width: 768px;
+}
+
 .header .container {
         flex-direction: row;
         justify-content: space-between;
@@ -904,7 +909,7 @@ ul {
         display: none;
     }
 
-    /* NAV becomes flex-grow to let nav‑list center */
+   
     .nav {
         display: flex;
         align-items: center;
@@ -912,9 +917,12 @@ ul {
     }
 
     .logo {
-        flex-shrink: 0;
+        padding: 24px 0;
+        margin-right: 120px;
+        
     }
 
+/* «Studio | Portfolio | Contacts» */
     .nav-list {
         display: flex;
         gap: 40px;
@@ -937,11 +945,11 @@ ul {
     .contact-link {
         font-size: 12px;
         line-height: 1.17;
-        letter-spacing: .02em;
+        letter-spacing: .04em;
         color: #434455;
         transition: color .25s cubic-bezier(.4, 0, .2, 1);
     }
-
+ 
     .contact-link:hover,
     .contact-link:focus {
         color: #404bbf;
@@ -1178,7 +1186,7 @@ ul {
         margin-left: 0;
     }
 
-    /* Subscribe form у два елементи в рядок */
+    /* Subscribe form */
     .subscribe-form {
         flex-direction: row;
         gap: 24px;
@@ -1210,137 +1218,117 @@ ul {
 
 /* Стилі для комп*ютера */
 
-@media (min-width: 1158px){
+@media screen and (min-width: 1158px) {
+
     /* Хедер */
-         
-.header {
-        height: 72px;
-        /* Figma: 72 px */
-        background: #fff;
-        border-bottom: 1px solid #e7e9fc;
-        box-shadow: 0 2px 1px rgba(46, 47, 66, .08),
-            0 1px 1px rgba(46, 47, 66, .16),
-            0 1px 6px rgba(46, 47, 66, .08);
+.container {
+     max-width: 1158px;
+     padding: 0 15px;
     }
 
-    /* 2. MAIN CONTAINER (3 колонки) -- */
-    .header .container {
-        max-width: 1158px;
-        /* Figma content width */
-        height: 100%;
-        margin: 0 auto;
-        padding: 0 15px;
-       position: relative;
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        /* logo | nav | contacts */
-        align-items: center;
-    }
-
-    /* 3. LOGO (ліва колонка) ----- */
-    .logo {
-        font: 700 18px/1.17 "Raleway", sans-serif;
-        letter-spacing: .03em;
-        text-transform: uppercase;
-        color: #4d5ae5;
-        white-space: nowrap;
-        /* не переноситься */
-    }
-
-    .logo-studio {
-        color: #2e2f42
-    }
-
+         .header .container {
+             max-width: 1158px;
+             margin: 0 auto;
+             padding: 0 15px;
     
-    .menu-toggle {
-        display: none;
-    }
-
-    /* бургер ховаємо */
-
-    .nav {
-        justify-self: center;
-    }
-
-    /* ставимо nav у центр */
-
-          .nav-list {
-              position: absolute;
-              left: 50%;
-              transform: translateX(-44%);
-              /* -50 % → ідеально; -44 % — відчутно «вліво» */
-              display: flex;
-              gap: 40px;
-              margin: 0;
-              padding: 0;
-              list-style: none;
-          }
+             /* головне для вирівнювання навігації та контактів */
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+         }
     
+         /* Бургер на комп'ютері не показуємо */
+         .menu-toggle {
+             display: none;
+         }
+    
+         /* --- НАВІГАЦІЯ --- */
+         .nav {
+             display: flex;
+             align-items: center;
+         }
+    
+         .logo {
+             margin-right: 76px;
+             /* відстань логотип-навігація */
+         }
+
+        /* «Studio | Portfolio | Contacts» */
+         .nav-list {
+             display: flex;
+             gap: 40px;
+        
+         }
+    
+         /* --- КОНТАКТИ --- */
+         .contact-info {
+             font-style: normal;
+            display: block;
+             
+         }
+    
+         .contact-list {
+             display: flex;  
+             flex-direction: row;
+             gap: 40px;
+             margin: 0;
+             padding: 0;
+             list-style: none;
+            
+         }
+    
+         .contact-link {
+             font-size: 16px;
+             line-height: 1.5;
+             text-decoration: none;
+             
+             color: inherit;
           
+             transition: color 250ms ease;
+         }
+    
+         .contact-link:hover,
+         .contact-link:focus {
+             color: #404bbf;
+             
+         }
+  /* 5. CONTACTS (права колонка) ------------------------------------- */
+  .contact-info {
+      justify-self: end;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      font-style: normal;
+      white-space: nowrap;
+      /* не ламати на дві лінії */
+  }
 
-    .nav-link {
-        position: relative;
-        display: block;
-        padding: 24px 0;
-        font: 500 16px/1.5 "Roboto", sans-serif;
-        letter-spacing: .02em;
-        color: #2e2f42;
-        text-decoration: none;
-        transition: color .25s cubic-bezier(.4, 0, .2, 1);
+  .contact-list {
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-    }
+  }
 
-    .nav-link:hover,
-    .nav-link:focus {
-        color: #404bbf
-    }
+  .contact-link {
+      font: 400 16px/1.5 "Roboto", sans-serif;
+      color: #434455;
+      text-decoration: none;
+      transition: color .25s cubic-bezier(.4, 0, .2, 1);
+  }
 
-    /* активний пункт */
-    .nav-link.current {
-        color: #404bbf
-    }
+  .contact-link:hover,
+  .contact-link:focus {
+      color: #404bbf
+  }
+  /*  Ховаємо бургер */
+         .menu-toggle {
+             display: none;
+         }
 
-    .nav-link.current::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        width: 100%;
-        height: 4px;
-        background: #404bbf;
-        border-radius: 2px;
-    }
 
-    /* 5. CONTACTS (права колонка) ------------------------------------- */
-    .contact-info {
-        justify-self: end;
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        font-style: normal;
-        white-space: nowrap;
-        /* не ламати на дві лінії */
-    }
-
-    .contact-list {
-        display: flex;
-        gap: 40px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .contact-link {
-        font: 400 16px/1.5 "Roboto", sans-serif;
-        color: #434455;
-        text-decoration: none;
-        transition: color .25s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    .contact-link:hover,
-    .contact-link:focus {
-        color: #404bbf
-    }
 
 
 /* Секція Hero */
