@@ -38,6 +38,9 @@ img {
         margin: 0 auto;
     }
    
+   a {
+       text-decoration: none;
+   }
 
 /* Хедер */
 .header {
@@ -891,13 +894,14 @@ ul {
 
    /* Стилі для  П Л А Н Ш Е Т А  */
 
+  
 
 @media screen and (min-width: 768px) {
-.container{
-    max-width: 768px;
-}
+    .container {
+        max-width: 768px;
+    }
 
-.header .container {
+    .header .container {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -909,7 +913,6 @@ ul {
         display: none;
     }
 
-   
     .nav {
         display: flex;
         align-items: center;
@@ -919,10 +922,9 @@ ul {
     .logo {
         padding: 24px 0;
         margin-right: 120px;
-        
     }
 
-/* «Studio | Portfolio | Contacts» */
+    /* «Studio | Portfolio | Contacts» */
     .nav-list {
         display: flex;
         gap: 40px;
@@ -945,11 +947,11 @@ ul {
     .contact-link {
         font-size: 12px;
         line-height: 1.17;
-        letter-spacing: .04em;
+        letter-spacing: 0.04em;
         color: #434455;
-        transition: color .25s cubic-bezier(.4, 0, .2, 1);
+        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
- 
+
     .contact-link:hover,
     .contact-link:focus {
         color: #404bbf;
@@ -960,10 +962,10 @@ ul {
         font-weight: 500;
         font-size: 16px;
         line-height: 1.5;
-        letter-spacing: .02em;
+        letter-spacing: 0.02em;
         color: #2e2f42;
         padding: 24px 0;
-        transition: color .25s cubic-bezier(.4, 0, .2, 1);
+        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-link:hover,
@@ -980,7 +982,7 @@ ul {
         height: 4px;
         background: transparent;
         border-radius: 2px;
-        transition: background .25s cubic-bezier(.4, 0, .2, 1);
+        transition: background 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-link.current::after {
@@ -992,25 +994,16 @@ ul {
         background: #404bbf;
     }
 
-@media (min-width: 768px) {
-
-    .hero {
-        /* фон—foto з desktop-макету */
-        background-image:
-            linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url("../images/people-office.jpg");
-        padding: 112px 0;
-        text-align: center;
-    }
-
-    /* Retina-варіант того самого зображення */
-    @media (min-resolution: 192dpi) {
-        .hero {
-            background-image:
-                linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url("../images/people-office@2x.jpg");
-        }
-    }
+  .hero {
+      background-image:
+          linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+          url("../images/people-office-tablet.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 112px 0;
+      text-align: center;
+  }
 
     .hero-container {
         max-width: 768px;
@@ -1024,7 +1017,6 @@ ul {
         letter-spacing: 0.02em;
         max-width: 496px;
         margin-bottom: 36px;
-        
     }
 
     .hero-button {
@@ -1034,133 +1026,131 @@ ul {
         font-size: 16px;
     }
 
-   /* features tablet */
-   .features {
-       padding: 96px 0;
-   }
+    /* features tablet */
+    .features {
+        padding: 96px 0;
+    }
 
-   .features-list {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 72px 24px;
-       /* 72px по вертикалі, 24px по горизонталі */
-       justify-content: center;
-       flex-direction: row;
-   }
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 72px 24px;
+        /* 72px по вертикалі, 24px по горизонталі */
+        justify-content: center;
+        flex-direction: row;
+    }
 
-   .feature-item {
-       width: calc((100% - 24px) / 2);
-       /* 2 в ряд */
-       text-align: left;
-   }
-  /* іконки приховуємо*/
+    .feature-item {
+        width: calc((100% - 24px) / 2);
+        /* 2 в ряд */
+        text-align: left;
+    }
+
+    /* іконки приховуємо */
     .feature-icon {
-     display: none;
-   }
+        display: none;
+    }
 
-   .feature-title {
-       font-weight: 700;
-       font-size: 18px;
-       line-height: 1.11;
-       letter-spacing: 0.02em;
-       color: #2e2f42;
-       margin-bottom: 8px;
-   }
+    .feature-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+        color: #2e2f42;
+        margin-bottom: 8px;
+    }
 
-   .feature-text {
-       font-size: 14px;
-       line-height: 1.5;
-       letter-spacing: 0.02em;
-       color: #434455;
-   }
-                 
+    .feature-text {
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #434455;
+    }
 
+    /* Our Team */
+    .team {
+        padding: 96px 32px;
+    }
 
-/* Стилі для Our Team для ПЛАНШЕТА */
-  .team {
-      padding: 96px 32px;
-  }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 64px;
+    }
 
-  .section-title {
-      font-size: 28px;
-      margin-bottom: 64px;
-  }
+    .team-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 64px 24px;
+        /* 64px — між рядами, 24px — між колонками */
+    }
 
-  .team-list {
-      flex-direction: row;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-  }
+    .team-item {
+        flex-basis: calc((100% - 24px) / 2);
+        padding-bottom: 32px;
+    }
 
-  .team-item {
-      max-width: 264px;
-      padding-bottom: 32px;
-  }
+    .team-info {
+        padding: 32px 16px 0;
+    }
 
-  .team-info {
-      padding: 32px 16px 0;
-  }
+    .team-name {
+        font-size: 20px;
+    }
 
-  .team-name {
-      font-size: 20px;
-  }
+    .team-role {
+        font-size: 16px;
+    }
 
-  .team-role {
-      font-size: 16px;
-  }
+    .social-item,
+    .team-icon-link {
+        width: 40px;
+        height: 40px;
+    }
 
-  .social-item {
-      width: 40px;
-      height: 40px;
-  }
+    .team-icon {
+        width: 16px;
+        height: 16px;
+    }
 
-  .team-icon-link {
-      width: 40px;
-      height: 40px;
-  }
+    /* Portfolio */
+    .portfolio {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
 
-  .team-icon {
-      width: 16px;
-      height: 16px;
-  }
-/* Стилі  portfolio для ПЛАНШЕТА */
-  .portfolio {
-      padding-top: 96px;
-      padding-bottom: 96px;
-  }
+    .portfolio-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 48px 24px;
+        justify-content: center;
+        flex-direction: row;
+    }
 
-  .portfolio-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px 24px;
-      justify-content: center;
-      flex-direction: row;
-  }
+    .portfolio-item {
+        width: calc((100% - 24px) / 2);
+        max-width: 500px;
+    }
 
-  .portfolio-item {
-      width: calc((100% - 24px) / 2);
-      max-width: 500px;
-  }
+    .portfolio-description {
+        font-size: 15px;
+        padding: 32px 24px;
+    }
 
-  .portfolio-description {
-      font-size: 15px;
-      padding: 32px 24px;
-  }
+    .portfolio-info {
+        padding: 28px 20px;
+    }
 
-  .portfolio-info {
-      padding: 28px 20px;
-  }
+    .portfolio-name {
+        font-size: 18px;
+    }
 
-  .portfolio-name {
-      font-size: 18px;
-  }
+    .portfolio-type {
+        font-size: 15px;
+    }
 
-  .portfolio-type {
-      font-size: 15px;
-  }
-
-       /* Стилі для footer  */
+    /* Footer */
     .footer-wrapper {
         max-width: 768px;
         flex-direction: row;
@@ -1196,21 +1186,23 @@ ul {
     .subscribe-input {
         width: 264px;
     }
-        .subscribe-form {
-            align-items: center;
-        }
-    
-                .subscribe-form {
-                    align-items: center;
-                }
-        
-        .subscribe-form {
-            align-items: center;
-        }
-    
-        }
+
+    .subscribe-form {
+        align-items: center;
+    }
 }
 
+/* Ретина-версія фонового зображення для планшета */
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image:
+            linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("../images/people-office-tablet.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
 
 
 
