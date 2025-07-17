@@ -1203,7 +1203,22 @@ ul {
         background-position: center;
     }
 }
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 408px;
+        min-height: 584px;
+        padding: 72px 24px 24px 24px;
+    }
 
+    .modal-title {
+        font-size: 16px;
+    }
+
+    .modal-close-btn {
+        top: 24px;
+        right: 24px;
+    }
+}
 
 
 
@@ -1500,12 +1515,14 @@ ul {
 /* Список учасників */
 .team-list {
     display: flex;
-    gap: 24px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 0 0 4px 4px;
+        padding: 0px 0px 32px 0px;
+        width: 264px;
+        height: 428px;
 }
 
 /* Картка учасника */
@@ -1521,13 +1538,15 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 32px;
 }
 
 /* Фото */
 .team-photo {
     display: block;
-    width: 100%;
-    height: auto;
+    width: 264px;
+    height: 260px;
+
 }
 
 /* Контейнер для імені та посади */
@@ -1694,7 +1713,6 @@ ul {
 
 /* Footer Section */
 
-
         .footer-wrapper {
             max-width: 1158px;
             margin: 0 auto;
@@ -1711,8 +1729,12 @@ ul {
         }
     
         .footer-subscribe {
-            max-width: 453px;
             margin-left: auto;
+            width: 453px;
+            height: 80px;
+            gap: 16px;
+            display: flex;
+
         }
     
         /* щоб кружечки не «роздувались» */
